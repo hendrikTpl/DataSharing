@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>:::Open Data API Endpoint Catcher:::</title>
+<link rel = "stylesheet" href = "coc_style.css">
+<script> 
+ 
+var uri =document.getElementById('input_uri');
+var file_name =document.getElementById('file_name');
+var input_finish =document.getElementById('input_finish');
+var input_interval =document.getElementById('input_interval');
+var interval =input_interval*1000;
+
+function process(){
+alert(interval++) 
+//call php script
+
+} 
+setInterval (process, interval)
+
+function terminate(){
+	clearInterval(interval)
+}
+
+</script>
+
+
+</head>
+<body>
+<table align="center">
+<tr>
+<td class='fbcontentdivider'> <h2 align="center"> ESL LAB </h2></td>
+</tr>
+
+<tr>
+<td> 
+	<form name="catcher_form" method="POST">
+	<fieldset class="fieldset" align="center">
+		<legend>API Endpoint Catcher</legend>
+			<br>
+			<table>
+			<tr>
+			<td>URI</td><td>: <input type="text" name="input_uri" id="input_uri"></td>
+			</tr>
+            <tr>
+			<td>Filename</td><td>: <input type="text" name="file_name" id="file_name"></td>
+			</tr>
+			<tr>
+			<td>Finish</td> <td>: <input type="date" id="input_finish" name="input_finish" /></td>											
+			</tr>
+            <tr>
+			<td>Interval</td> <td>: <input type="text" name="input_interval" id="input_interval"></td>
+			</tr>
+            </table>                       
+            <br />
+            <div>
+			<input type="button" onclick="process()" value="Process">
+			<input type="button" onclick="terminate()" value="terminate">
+            <input type="submit" value="Process" name="button_process" class="fbtab">
+			<input type="submit" value="Terminate" name="button_terminate" class="fbtab">
+            </div>
+			
+	</fieldset>
+	</form>
+
+	
+ </td>
+</tr>
+
+</table>
+
+</body>
+</html>
